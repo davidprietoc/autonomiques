@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa electoral simple</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>Mapa electoral<br><span>Catalunya</span></h1>
+        <p>Versió simple per publicar a GitHub Pages</p>
+      </div>
+
+      <label for="metric-select" class="label">Indicador</label>
+      <select id="metric-select">
+        <option value="comuns_pct">% Comuns Sumar</option>
+        <option value="participacio_pct">% Participació</option>
+        <option value="psc_pct">% PSC</option>
+        <option value="erc_pct">% ERC</option>
+        <option value="junts_pct">% Junts</option>
+      </select>
+
+      <div class="legend-block">
+        <div class="label">Escala</div>
+        <div id="legend" class="legend"></div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <div class="stat-label">Municipis amb dades</div>
+          <div class="stat-value" id="municipis-count">-</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Promig Catalunya</div>
+          <div class="stat-value" id="avg-value">-</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Màxim</div>
+          <div class="stat-value" id="max-value">-</div>
+        </div>
+      </div>
+
+      <div class="help">
+        <strong>Ús:</strong>
+        <ul>
+          <li>Passa el ratolí per sobre d’un municipi</li>
+          <li>Fes clic per fixar el popup</li>
+          <li>Canvia l’indicador al selector</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="map-wrap">
+      <div id="map"></div>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>
